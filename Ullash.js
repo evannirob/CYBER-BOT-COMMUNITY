@@ -1,6 +1,6 @@
 const { spawn } = require("child_process");
 const axios = require("axios");
-const logger = require("./utils/log");
+const logger = require("./nirob/log");
 const express = require("express");
 const path = require("path");
 
@@ -11,7 +11,7 @@ try {
 } catch (err) {
     logger(`Failed to load package.json: ${err.message}`, "[ Error ]");
 }
-const BOT_NAME = pkg.name || "Islamick Bot";
+const BOT_NAME = pkg.name || "ꓰꓦꓮꓠ ꓮꓧꓟꓰꓓ";
 const BOT_VERSION = pkg.version || "5.0.0";
 const BOT_DESC = pkg.description || "Islamick Chat Bot";
 
@@ -61,12 +61,12 @@ function startBot(message) {
 }
 
 // ==================== Log Meta Info ====================
-logger(BOT_NAME, "[ NAME ]");
-logger(`Version: ${BOT_VERSION}`, "[ VERSION ]");
+logger(BOT_NAME, "[ ꓰꓦꓮꓠ ꓮꓧꓟꓰꓓ ]");
+logger(`Version: ${2.9}`, "[ VERSION ]");
 logger(BOT_DESC, "[ DESCRIPTION ]");
 
 // ==================== GitHub Update Check (Optional) ====================
-axios.get("https://raw.githubusercontent.com/cyber-ullash/cyber-bot/main/data.json")
+axios.get("https://raw.githubusercontent.com/cyber-evan/cyber-bot/main/data.json")
     .then((res) => {
         logger(res.data.name || BOT_NAME, "[ UPDATE NAME ]");
         logger(`Version: ${res.data.version || BOT_VERSION}`, "[ UPDATE VERSION ]");
